@@ -87,7 +87,7 @@ public class GetRDSDataLambdaHandler implements RequestHandler<Object, Object>{
 		    String insertStatement = " insert into LETTERHISTORY (LETTERID, LETTERHISTORYJSON, CREATED) values (?,?, now())";
 		    context.getLogger().log("Preparing the SQL Statement");
 
-		    // create the mysql insert preparedstatement
+		    // create the postgres insert preparedstatement
 		    PreparedStatement preparedStatement = connection.prepareStatement(insertStatement);
 		    preparedStatement.setString (1, "LETTER#12345");
 		    preparedStatement.setString (2, "{\"LetterHistory Json"+new Date()+"\"}");
